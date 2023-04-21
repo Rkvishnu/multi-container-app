@@ -10,17 +10,17 @@ spec:
   rules:
     - http:
         paths:
-          - path: /?(.*)
+          - path: { { .Values.paths.client } }
             pathType: Prefix
             backend:
               service:
                 name: client-service
                 port:
-                  number: 3000
-          - path: /api/?(.*)
+                  number: {{.Values.ports.client}}
+          - path: {{ .Values.paths.api}}
             pathType: Prefix
             backend:
               service:
                 name: server-service
                 port:
-                  number: 5000
+                  number: {{.Values.ports.server}}

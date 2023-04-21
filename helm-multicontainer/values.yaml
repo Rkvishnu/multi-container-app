@@ -1,1 +1,9 @@
- replicaCount: 1
+replicaCount: 1
+paths:
+  client: /?(.*)
+  api: /api/?(.*)
+
+ports:
+  client: 3000
+  server: 5000
+  postgres: 5432

@@ -7,6 +7,6 @@ spec:
   selector:
     component: web
   ports:
-    - port: 5000
+    - port: {{.Values.ports.server}}
       targetPort: 5000
 
